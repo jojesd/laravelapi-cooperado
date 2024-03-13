@@ -3,26 +3,32 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cooperadosControllerApi;
+use App\Http\Controllers\TokenController;
 
 
-Route::controller(cooperadosControllerApi::class)->group(function () {
-    Route::get('/getCooperados', 'index');
+
+Route::group(['middleware' => 'token.validation'], function () {
+    Route::get('/getCooperados', [cooperadosControllerApi::class, 'index']);
 });
 
-Route::controller(cooperadosControllerApi::class)->group(function () {
-    Route::post('/geraCooperado', 'store');
+Route::group(['middleware' => 'token.validation'], function () {
+    Route::post('/geraCooperado', [cooperadosControllerApi::class, 'store']);
 });
 
-Route::controller(cooperadosControllerApi::class)->group(function () {
-    Route::get('/getCooperados/{id}', 'show');
+Route::group(['middleware' => 'token.validation'], function () {
+    Route::get('/getCooperados/{id}', [cooperadosControllerApi::class, 'show']);
 });
 
-Route::controller(cooperadosControllerApi::class)->group(function () {
-    Route::put('/editCooperado/{id}', 'update');
+Route::group(['middleware' => 'token.validation'], function () {
+    Route::put('/editCooperado/{id}', [cooperadosControllerApi::class, 'update']);
 });
 
-Route::controller(cooperadosControllerApi::class)->group(function () {
-    Route::delete('/delCooperado/{id}', 'destroy');
+Route::group(['middleware' => 'token.validation'], function () {
+    Route::delete('/delCooperado/{id}', [cooperadosControllerApi::class, 'destroy']);
 });
 
+Route::controller(TokenController::class)->group(function () {
+    Route::get('/gerarToken/{user}/{password}', 'gerarToken');
+});
+##########
 

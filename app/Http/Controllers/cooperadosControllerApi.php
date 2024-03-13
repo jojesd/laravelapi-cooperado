@@ -21,6 +21,8 @@ class cooperadosControllerApi extends Controller
 
     public function store(Request $request)
     {
+        $data = $request->all();
+                
         $validator = Validator::make($request->all(), [
             'nome' => 'required|string|max:100',
             'cpfcnpj' => ['required', 'string', 'max:18', 'unique:cooperados,cpfcnpj', new CpfCnpjValidationRule()],
@@ -38,7 +40,7 @@ class cooperadosControllerApi extends Controller
             $cooperado = cooperadosModel::create($data);
             return response()->json(['message' => 'Cooperado criado com sucesso', 'data' => $cooperado], 201);
         } catch(\Exception $e){
-            return response()->json(['error' => 'Erro ao criar o cooperado'], 500);
+            return response()->json(['error' => 'Erro ao criar o cooperado', 'message' => $e->getMessage()], 500);
         }
     }
 
