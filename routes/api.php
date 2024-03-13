@@ -9,22 +9,20 @@ Route::controller(cooperadosControllerApi::class)->group(function () {
     Route::get('/getCooperados', 'index');
 });
 
-
 Route::controller(cooperadosControllerApi::class)->group(function () {
-    Route::get('/geraCooperado', 'store');
+    Route::post('/geraCooperado', 'store');
 });
-
 
 Route::controller(cooperadosControllerApi::class)->group(function () {
     Route::get('/getCooperados/{id}', 'show');
 });
 
 Route::controller(cooperadosControllerApi::class)->group(function () {
-    Route::get('/editCooperado/{id}', 'update');
+    Route::put('/editCooperado/{id}', 'update');
 });
 
 Route::controller(cooperadosControllerApi::class)->group(function () {
-    Route::get('/delCooperado/{id}', 'destroy');
+    Route::delete('/delCooperado/{id}', 'destroy');
 });
 
 

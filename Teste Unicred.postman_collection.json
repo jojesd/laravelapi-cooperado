@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "8d979c34-9bd9-4d18-b603-60a1f2b504b2",
+		"name": "Teste Unicred",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26403926"
+	},
+	"item": [
+		{
+			"name": "getCooperados",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8000/api/getCooperados",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"getCooperados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "geraCooperado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Teste123\",\r\n    \"cpfcnpj\": \"92613176008\",\r\n    \"datafundacao\": \"2001-01-11\",\r\n    \"rendafaturamento\": \"5000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8000/api/geraCooperado",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"geraCooperado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCooperado",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"cpfcnpj\": \"32227722070\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8000/api/editCooperado/1",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"editCooperado",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCooperados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://0.0.0.0:8000/api/getCooperados/3",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"getCooperados",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delCooperado",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8000/api/delCooperado/2",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delCooperado",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
